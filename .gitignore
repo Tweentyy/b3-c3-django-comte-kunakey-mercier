@@ -1,2 +1,5 @@
 .idea
 db.sqlite3
+mysite/__pycache__
+PasswordGenerator/__pycache__
+PasswordGenerator/migrations
