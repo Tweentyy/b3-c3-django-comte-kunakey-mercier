@@ -17,6 +17,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from PasswordManager import views
+
 urlpatterns = [
+    path("", views.index, name='index'),
     path('admin/', admin.site.urls),
+    path('add_site/', views.add_site, name='add_site'),
 ]
