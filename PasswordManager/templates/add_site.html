@@ -1,0 +1,10 @@
+<h1>Ajouter un site</h1>
+
+<form method="post">
+    {% csrf_token %}
+    <input type="text" name="name" placeholder="Nom du site">
+    <input type="text" name="url" placeholder="URL du site">
+    <input type="text" name="username" placeholder="Nom d'utilisateur">
+    <input type="password" name="password" placeholder="Mot de passe">
+    <button type="submit">Ajouter</button>
+</form>
