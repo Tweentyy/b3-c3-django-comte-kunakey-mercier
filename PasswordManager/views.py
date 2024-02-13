@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .forms import SiteForm
 from .models import Site
 
@@ -24,3 +24,9 @@ def add_site(request):
     }
 
     return render(request, 'add_site.html', context)
+
+def delete_site(request, id):
+    site = get_object_or_404(Site, id=id)
+    site.delete()
+
+    return redirect('index')
