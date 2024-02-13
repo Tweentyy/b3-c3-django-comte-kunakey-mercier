@@ -30,7 +30,10 @@
                 <td>{{ site.url }}</td>
                 <td>{{ site.username }}</td>
                 <td>{{ site.password }}</td>
-                <td><a href="{% url 'delete_site' site.id %}">Supprimer</a></td>
+                <td>
+                    <a href="{% url 'edit_site' site.id %}">Modifier</a>
+                    <a href="{% url 'delete_site' site.id %}">Supprimer</a>
+                </td>
             </tr>
         {% endfor %}
         </tbody>
