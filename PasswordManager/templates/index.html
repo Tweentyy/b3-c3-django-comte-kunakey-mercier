@@ -1,10 +1,19 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <link rel="stylesheet" href="{% static "styles.css" %}">
+    <title>Tableau de bord</title>
+</head>
+<body>
 <h1>Tableau de bord</h1>
 
 <div class="btn-right">
     <a href="{% url 'add_site' %}">Ajouter un site</a>
 </div>
 
-<table>
+<div>
+    <table>
         <thead>
         <tr>
             <th>Nom</th>
@@ -24,3 +33,6 @@
         {% endfor %}
         </tbody>
     </table>
+</div>
+</body>
+</html>
