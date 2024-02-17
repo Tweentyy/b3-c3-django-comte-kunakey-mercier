@@ -58,7 +58,7 @@ def export_sites(request):
     )
 
     fieldnames = ['Nom', 'URL', 'Nom d\'utilisateur', 'Mot de passe']
-    writer = csv.DictWriter(response, fieldnames=fieldnames)
+    writer = csv.DictWriter(response, fieldnames=fieldnames, delimiter=';')
 
     writer.writeheader()
     for site in sites:
