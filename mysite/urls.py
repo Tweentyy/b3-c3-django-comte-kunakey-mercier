@@ -25,5 +25,6 @@ urlpatterns = [
     path('add_site/', views.add_site, name='add_site'),
     path('edit/<uuid:id>/', views.edit_site, name='edit_site'),
     path('delete/<uuid:id>/', views.delete_site, name='delete_site'),
-    path('export_sites/', views.export_sites, name='export_sites')
+    path('export_sites/', views.export_sites, name='export_sites'),
+    path('import_sites/', views.import_sites, name='import_sites')
 ]
