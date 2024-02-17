@@ -72,3 +72,26 @@ def export_sites(request):
         )
 
     return response
+
+def import_sites(request):
+    if request.method == 'POST':
+        csv_file = request.FILES.get('sites')
+        if not csv_file:
+            return redirect('index')
+
+        decoded_file = csv_file.read().decode('utf-8').splitlines()
+        reader = csv.DictReader(decoded_file, delimiter=';')
+
+        for row in reader:
+            if not row['Nom'] or not row['URL'] or not row['Nom d\'utilisateur'] or not row['Mot de passe']:
+                continue
+
+            site = Site(
+                name=row['Nom'],
+                url=row['URL'],
+                username=row['Nom d\'utilisateur'],
+                password=row['Mot de passe']
+            )
+            site.save()
+
+    return redirect('index')
