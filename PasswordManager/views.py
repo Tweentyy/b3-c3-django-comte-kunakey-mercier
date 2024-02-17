@@ -25,6 +25,23 @@ def add_site(request):
 
     return render(request, 'add_site.html', context)
 
+def edit_site(request, id):
+    site = get_object_or_404(Site, id=id)
+    if request.method == 'POST':
+        form = SiteForm(request.POST, instance=site)
+        if form.is_valid():
+            form.save()
+            return redirect('index')
+    else:
+        form = SiteForm(instance=site)
+
+    context = {
+        "form": form,
+        "site": site
+    }
+
+    return render(request, 'edit_site.html', context)
+
 def delete_site(request, id):
     site = get_object_or_404(Site, id=id)
     site.delete()

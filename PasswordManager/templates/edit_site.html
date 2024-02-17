@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <link rel="stylesheet" href="{% static "styles.css" %}">
+    <title>Modification d'un site</title>
+</head>
+<body>
+    <h1>Modification d'un site</h1>
+    
+    <form method="post" action="">
+        {% csrf_token %}
+        <div>
+            <label>Nom du site :</label>
+            <input type="text" name="name" placeholder="Nom du site" value="{{ form.name.value|default:'' }}">
+            {% if form.name.errors %}
+                <span>{{ form.name.errors.0 }}</span>
+            {% endif %}
+        </div>
+
+        <div>
+            <label>URL du site :</label>
+            <input type="text" name="url" placeholder="URL du site" value="{{ form.url.value|default:'' }}">
+            {% if form.url.errors %}
+                <span>{{ form.url.errors.0 }}</span>
+            {% endif %}
+        </div>
+
+        <div>
+            <label>Nom d'utilisateur :</label>
+            <input type="text" name="username" placeholder="Nom d'utilisateur" value="{{ form.username.value|default:'' }}">
+            {% if form.username.errors %}
+                <span>{{ form.username.errors.0 }}</span>
+            {% endif %}
+        </div>
+
+        <div>
+            <label>Mot de passe :</label>
+            <input type="password" name="password" placeholder="Mot de passe" value="{{ form.password.value|default:'' }}">
+            {% if form.password.errors %}
+                <span>{{ form.password.errors.0 }}</span>
+            {% endif %}
+        </div>
+
+        <button type="submit">Modifier</button>
+    </form>
+</body>
+</html>
