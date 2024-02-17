@@ -23,4 +23,5 @@ urlpatterns = [
     path("", views.index, name='index'),
     path('admin/', admin.site.urls),
     path('add_site/', views.add_site, name='add_site'),
+    path('delete/<uuid:id>/', views.delete_site, name='delete_site')
 ]
