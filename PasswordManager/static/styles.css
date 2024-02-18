@@ -1,0 +1,149 @@
+* {
+    margin: 0;
+    padding: 0
+}
+
+body {
+    font-family: "Arial", sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    box-shadow: 0 0 20px #0000001a;
+    background-color: #fff
+}
+
+thead {
+    background-color: #3498db;
+    color: #fff
+}
+
+th, td {
+    padding: 15px;
+    text-align: center;
+    border-bottom: 1px solid #ddd
+}
+
+tbody tr:hover {
+    background-color: #f5f5f5
+}
+
+a {
+    color: #3498db;
+    text-decoration: none;
+    margin-right: 10px;
+    transition: color .3s
+}
+
+a:hover {
+    color: #2073c8
+}
+
+h1 {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #3498db;
+    color: #fff
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #f4f4f4
+}
+
+.header-container a {
+    text-decoration: none;
+    color: #3498db;
+    padding: 8px 15px;
+    border: none;
+    cursor: pointer
+}
+
+.import-form {
+    display: flex;
+    align-items: flex-start
+}
+
+.import-form input[type="file"] {
+    margin-right: 10px
+}
+
+.import-form button {
+    background-color: #3498db;
+    color: #fff;
+    padding: 8px 15px;
+    border: none;
+    cursor: pointer
+}
+
+.custom-file-upload {
+    position: relative;
+    overflow: hidden;
+    display: inline-block
+}
+
+.custom-file-upload input[type="file"] {
+    font-size: 100px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0
+}
+
+.custom-file-upload span {
+    background-color: #3498db;
+    color: #fff;
+    padding: 8px 15px;
+    border: none;
+    cursor: pointer
+}
+
+.manage-site-form {
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.manage-site-form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.manage-site-form input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.manage-site-form span {
+    color: #e74c3c;
+    font-size: 14px;
+    display: block;
+    margin-top: 5px;
+}
+
+.manage-site-form button {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.manage-site-form button:hover {
+    background-color: #2073c8;
+}

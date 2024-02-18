@@ -1,2 +1,12 @@
 .idea
 db.sqlite3
+mysite/__pycache__
+PasswordGenerator/__pycache__
+PasswordGenerator/migrations
+*.pyc
+*.pyo
+*.pyd
+__pycache__
+.pytest_cache
+.vscode
+```
