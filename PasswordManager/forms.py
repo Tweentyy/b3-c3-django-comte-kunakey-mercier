@@ -22,5 +22,5 @@ class SiteForm(forms.ModelForm):
             r'(?:/?|[/?]\S+)$', re.IGNORECASE)
 
         if not re.match(regex, url):
-            raise forms.ValidationError('Invalid URL. URL must start with http or https and follow the standard URL format.')
+            raise forms.ValidationError('L\'URL doit commencer par http ou https et suivre le format standard d\'une URL.')
         return url
