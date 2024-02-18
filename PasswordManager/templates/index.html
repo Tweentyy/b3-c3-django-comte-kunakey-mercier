@@ -8,13 +8,15 @@
 <body>
 <h1>Tableau de bord</h1>
 
-<div>
+<div class="header-container">
     <a href="{% url 'add_site' %}">Ajouter un site</a>
     <a href="{% url 'export_sites' %}">Exporter</a>
-    <form method="post" enctype="multipart/form-data" action="{% url 'import_sites' %}">
+    <form class="import-form" method="post" enctype="multipart/form-data" action="{% url 'import_sites' %}">
         {% csrf_token %}
-        <input type="file" name="sites" accept="text/csv"/>
-        <button type="submit">Importer</button>
+        <label for="file-input" class="custom-file-upload">
+            <span>Importer</span>
+            <input id="file-input" type="file" name="sites" accept="text/csv"/>
+        </label>
     </form>
 </div>
 
