@@ -86,12 +86,24 @@ def import_sites(request):
             if not row['Nom'] or not row['URL'] or not row['Nom d\'utilisateur'] or not row['Mot de passe']:
                 continue
 
-            site = Site(
-                name=row['Nom'],
-                url=row['URL'],
-                username=row['Nom d\'utilisateur'],
-                password=row['Mot de passe']
-            )
-            site.save()
+            form_data = {
+                'name': row['Nom'],
+                'url': row['URL'],
+                'username': row['Nom d\'utilisateur'],
+                'password': row['Mot de passe'],
+            }
+
+            form = SiteForm(form_data)
+            if form.is_valid():
+                cleaned_data = form.cleaned_data
+                site = Site(
+                    name=row['Nom'],
+                    url=row['URL'],
+                    username=row['Nom d\'utilisateur'],
+                    password=row['Mot de passe']
+                )
+                site.save()
+            else:
+                print(form.errors)
 
     return redirect('index')
