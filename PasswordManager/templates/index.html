@@ -1,49 +1,57 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
+<head>
     <link rel="stylesheet" href="{% static "styles.css" %}">
     <title>Tableau de bord</title>
-  </head>
-  <body>
-    <h1>Tableau de bord</h1>
+</head>
+<body>
+<h1>Tableau de bord</h1>
 
-    <div>
-      <a href="{% url 'add_site' %}">Ajouter un site</a>
-      <a href="{% url 'export_sites' %}">Exporter</a>
-      <form method="post" enctype="multipart/form-data" action="{% url 'import_sites' %}">
+<div class="header-container">
+    <a href="{% url 'add_site' %}">Ajouter un site</a>
+    <a href="{% url 'export_sites' %}">Exporter</a>
+    <form class="import-form" method="post" enctype="multipart/form-data" action="{% url 'import_sites' %}">
         {% csrf_token %}
-        <input type="file" name="sites" accept="text/csv" />
-        <button type="submit">Importer</button>
-      </form>
-    </div>
+        <label for="file-input" class="custom-file-upload">
+            <span>Importer</span>
+            <input id="file-input" type="file" name="sites" accept="text/csv"/>
+        </label>
+    </form>
+</div>
 
-    <div>
-      <table>
+<div>
+    <table>
         <thead>
-          <tr>
+        <tr>
             <th>Nom</th>
             <th>URL</th>
             <th>Nom d'utilisateur</th>
             <th>Mot de passe</th>
             <th>Actions</th>
-          </tr>
+        </tr>
         </thead>
         <tbody>
-          {% for site in sites %}
-          <tr>
-            <td>{{ site.name }}</td>
-            <td>{{ site.url }}</td>
-            <td>{{ site.username }}</td>
-            <td>{{ site.password }}</td>
-            <td>
-              <a href="{% url 'edit_site' site.id %}">Modifier</a>
-              <a href="{% url 'delete_site' site.id %}">Supprimer</a>
-            </td>
-          </tr>
-          {% endfor %}
+        {% for site in sites %}
+            <tr>
+                <td>{{ site.name }}</td>
+                <td>{{ site.url }}</td>
+                <td>{{ site.username }}</td>
+                <td>{{ site.password }}</td>
+                <td>
+                    <a href="{% url 'edit_site' site.id %}">Modifier</a>
+                    <a href="{% url 'delete_site' site.id %}">Supprimer</a>
+                </td>
+            </tr>
+        {% endfor %}
         </tbody>
-      </table>
-    </div>
-  </body>
+    </table>
+</div>
+
+<script>
+    document.getElementById("file-input").addEventListener("change", function () {
+        document.querySelector(".import-form").submit();
+    });
+</script>
+</body>
 </html>
