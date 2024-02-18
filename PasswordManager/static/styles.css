@@ -105,7 +105,7 @@ h1 {
     cursor: pointer
 }
 
-.add-site-form {
+.manage-site-form {
     max-width: 400px;
     margin: 0 auto;
     background-color: #f4f4f4;
@@ -114,13 +114,13 @@ h1 {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.add-site-form label {
+.manage-site-form label {
     display: block;
     font-weight: bold;
     margin-bottom: 5px;
 }
 
-.add-site-form input {
+.manage-site-form input {
     width: 100%;
     padding: 8px;
     box-sizing: border-box;
@@ -128,14 +128,14 @@ h1 {
     border-radius: 4px;
 }
 
-.add-site-form span {
+.manage-site-form span {
     color: #e74c3c;
     font-size: 14px;
     display: block;
     margin-top: 5px;
 }
 
-.add-site-form button {
+.manage-site-form button {
     background-color: #3498db;
     color: #fff;
     padding: 10px 15px;
@@ -144,6 +144,6 @@ h1 {
     cursor: pointer;
 }
 
-.add-site-form button:hover {
+.manage-site-form button:hover {
     background-color: #2073c8;
 }
